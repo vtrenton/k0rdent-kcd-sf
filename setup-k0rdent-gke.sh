@@ -1,0 +1,12 @@
+PROJECT_ID="k0rdent-gke-kcd-sf"   # use an existing project id OR a new unique id
+BILLING_ACCOUNT_ID="REPLACE_IF_CREATING_PROJECT"  # only needed for (A)
+REGION="us-central1"
+ZONE="us-central1-a"            # only used for Standard clusters
+NETWORK_NAME="k0rdent-vpc"
+SUBNET_NAME="k0rdent-subnet"
+SUBNET_RANGE="10.10.0.0/20"
+POD_RANGE_NAME="pods-range"
+POD_RANGE_CIDR="10.20.0.0/14"
+SVC_RANGE_NAME="services-range"
+SVC_RANGE_CIDR="10.30.0.0/20"
+CLUSTER_NAME="k0rdent"
