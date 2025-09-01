@@ -1,16 +1,3 @@
-variable "project_id"           { type = string }
-variable "zone"                 { type = string }
-variable "cluster_name"         { type = string }
-variable "release_channel"      { type = string }
-variable "node_pool_name"       { type = string }
-variable "node_count"           { type = number }
-variable "machine_type"         { type = string }
-
-variable "network_self_link"    { type = string }
-variable "subnetwork_self_link" { type = string }
-variable "pod_range_name"       { type = string }
-variable "svc_range_name"       { type = string }
-
 resource "google_container_cluster" "cluster" {
   project  = var.project_id
   name     = var.cluster_name
@@ -44,7 +31,8 @@ resource "google_container_node_pool" "pool" {
 
   node_config {
     machine_type = var.machine_type
-    # Default service account & scopes are fine for a demo
+    disk_type = "pd-ssd"
+    disk_size_gb = var.node_disk_gb
   }
 
   depends_on = [google_container_cluster.cluster]

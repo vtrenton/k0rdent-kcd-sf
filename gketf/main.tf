@@ -22,7 +22,7 @@ module "network" {
 
 # 3) GKE Standard (depends on Network)
 module "gke" {
-  source                   = "./modules/gke_standard"
+  source                   = "./modules/gke"
   project_id               = var.project_id
   zone                     = var.zone
   cluster_name             = var.cluster_name
@@ -30,6 +30,7 @@ module "gke" {
   node_pool_name           = var.node_pool_name
   node_count               = var.node_count
   machine_type             = var.machine_type
+  node_disk_gb             = var.node_disk_gb
   network_self_link        = module.network.network_self_link
   subnetwork_self_link     = module.network.subnetwork_self_link
   pod_range_name           = var.pod_range_name
