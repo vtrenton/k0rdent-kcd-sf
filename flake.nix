@@ -21,7 +21,7 @@
           buildInputs = [
             gcloudWithPlugin
             pkgs.kubectl
-            pkgs.helm
+            pkgs.kubernetes-helm
             pkgs.git
             pkgs.opentofu
           ];
