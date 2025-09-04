@@ -2,24 +2,9 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: kcdsf-cluster-deploy
-  namespace: flux-system
+  namespace: kcm-system 
 spec:
   interval: 1m
   url: https://github.com/vtrenton/kcdsf-cluster-deploy
   ref:
     branch: master
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: kcdsf-cluster-deploy
-  namespace: flux-system
-spec:
-  interval: 5m
-  sourceRef:
-    kind: GitRepository
-    name: kcdsf-cluster-deploy
-  path: ./
-  prune: true
-  wait: true
-  timeout: 10m

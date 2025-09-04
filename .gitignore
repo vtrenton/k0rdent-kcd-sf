@@ -1,4 +1,5 @@
 *.swp
+key.json
 # Local .terraform directories
 *.terraform/
 
