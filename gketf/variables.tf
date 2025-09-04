@@ -76,5 +76,5 @@ variable "node_disk_gb" {
 
 variable "machine_type" {
   type = string
-  default = "e2-standard-4"
+  default = "e2-standard-2"
 }
