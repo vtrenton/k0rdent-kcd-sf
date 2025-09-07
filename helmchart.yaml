@@ -1,0 +1,15 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmChart
+metadata:
+  labels:
+    k0rdent.mirantis.com/managed: "true"
+  name: kcm-system-gcp-cluster-deploy
+  namespace: kcm-system
+spec:
+  chart: chart
+  interval: 1m0s
+  reconcileStrategy: ChartVersion
+  sourceRef:
+    kind: GitRepository
+    name: gcp-cluster-gitrepo
+  version: '*'
