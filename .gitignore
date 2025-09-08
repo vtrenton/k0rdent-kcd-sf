@@ -4,8 +4,10 @@
 #google cloud artifacts
 key.json
 
-# kubeconfig for downstream cluster
-downstream-kc.yaml
+# kubeconfig for downstream clusters
+gcloud-kc.yaml
+aws-kc.yaml
+
 # Local .terraform directories
 *.terraform/
 

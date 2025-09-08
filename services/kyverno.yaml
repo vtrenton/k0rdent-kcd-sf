@@ -1,0 +1,14 @@
+apiVersion: k0rdent.mirantis.com/v1beta1
+kind: MultiClusterService
+metadata:
+  name: kyverno-deploy
+spec:
+  clusterSelector:
+    matchLabels:
+      k0rdent.mirantis.com/component: kcm
+  serviceSpec:
+    services:
+    - template: kyverno-3-4-4
+      name: kyverno
+      namespace: kyverno
+    priority: 100

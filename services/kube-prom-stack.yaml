@@ -1,0 +1,14 @@
+apiVersion: k0rdent.mirantis.com/v1beta1
+kind: MultiClusterService
+metadata:
+  name: kube-prom-stack-deploy
+spec:
+  clusterSelector:
+    matchLabels:
+      environment: production
+  serviceSpec:
+    services:
+    - template: kube-prometheus-stack-72-6-2
+      name: kube-prometheus-stack
+      namespace: monitoring-system
+    priority: 100
