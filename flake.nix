@@ -20,6 +20,7 @@
         default = pkgs.mkShell {
           buildInputs = [
             gcloudWithPlugin
+            pkgs.awscli2
             pkgs.kubectl
             pkgs.kubernetes-helm
             pkgs.git
@@ -29,6 +30,7 @@
             export USE_GKE_GCLOUD_AUTH_PLUGIN=True
             echo "✅ DevShell ready:"
             echo "   - gcloud (with GKE auth plugin)"
+            echo "   - aws-cli"
             echo "   - kubectl"
             echo "   - helm"
             echo "   - opentofu"

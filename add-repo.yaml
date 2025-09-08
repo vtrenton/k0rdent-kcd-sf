@@ -19,7 +19,7 @@ metadata:
   labels:
     k0rdent.mirantis.com/managed: "true"
 spec:
-  interval: 5m
+  interval: 1m
   targetNamespace: kcm-system
   install:
     createNamespace: true
@@ -41,7 +41,7 @@ metadata:
   namespace: kcm-system
 spec:
   chart: chart
-  interval: 1m0s
+  interval: 1m
   reconcileStrategy: ChartVersion
   sourceRef:
     kind: GitRepository
